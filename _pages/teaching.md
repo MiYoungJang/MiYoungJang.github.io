@@ -2,12 +2,10 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: TBU
+description:
 nav: true
 nav_order: 6
 calendar: false
 ---
-
-TBU
 
 {% include courses.liquid %}
