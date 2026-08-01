@@ -1,0 +1,56 @@
+# _data/people.yml
+# One entry per person shown on the People page.
+# NOTE: field names may need to match your al-folio version's schema exactly —
+# after cloning, compare with the example entry already in this file and adjust if needed.
+#
+# `category` groups people into sections on the People page (e.g. Professor,
+# Postdoc, PhD Student, MS Student, Alumni, ...). The page will render one
+# section header per distinct category value, in the order entries appear
+# below. Within a category, entries are listed in the order you put them here.
+
+# ── Professor ──────────────────────────────────────────────────────────────
+- name: MiYoung Jang
+  also_known_as: Mi Young Jang
+  category: Professor
+  affiliations:
+    name: 
+    url: 
+  position: 
+  image: people/MiYoungJang.jpg
+  image_circular: false # crop image to a circle
+  address: >
+    <p>Dongduk Women's University</p>
+    <p>Seoul, South Korea</p>
+  email: email@domain.com 
+  google_scholar: # add your Google Scholar user ID here if you have a profile
+  linkedin: # add your LinkedIn handle here if desired
+  github: # add your GitHub username here if desired
+  description: >
+
+
+# ── PhD Students (template — duplicate this block per new member) ─────────
+# - name: [Student Name]
+#   category: PhD Student
+#   image: [student_photo].jpg
+#   image_circular: false
+#   period: "PhD, 2026 - Now"     # optional free-text, if the layout supports it
+#   email: [student email]
+#   description: >
+#     [One or two sentence bio / research focus]
+
+# ── MS Students (template) ─────────────────────────────────────────────────
+# - name: [Student Name]
+#   category: MS Student
+#   image: [student_photo].jpg
+#   image_circular: false
+#   period: "MS, 2026 - Now"
+#   description: >
+#     [One or two sentence bio]
+
+# ── Alumni (template — move an entry here and add an end date when someone leaves) ──
+# - name: [Former Member Name]
+#   category: Alumni
+#   image: [photo].jpg
+#   period: "PhD, 2022 - 2026"
+#   description: >
+#     [Where they went next, optional]
