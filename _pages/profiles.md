@@ -3,7 +3,7 @@ layout: profiles
 permalink: /people/
 title: people
 nav: true
-nav_order: 7
+nav_order: 1
 _styles: >
   .profile img { width: 85%; }
 
