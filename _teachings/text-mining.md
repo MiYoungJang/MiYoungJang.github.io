@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Basic Linear Algebra
+title: Text Mining
 description: TBU
 instructor: MiYoung Jang
 year: 2026
