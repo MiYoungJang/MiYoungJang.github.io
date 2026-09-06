@@ -1,10 +1,10 @@
 ---
 layout: course
-title: Basic Statistics
+title: Linear Algebra
 description: TBU
 instructor: MiYoung Jang
-institution: "Dongduk Women's University"
-year: 2026
+institution: "University of Pennsylvania"
+year: 2019
 term: Fall
 ---
 

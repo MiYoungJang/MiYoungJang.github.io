@@ -1,34 +1,47 @@
 {% if site.teachings %}
-  <div class="courses">
-    {% assign courses_by_year = site.teachings | sort: 'year' | reverse | group_by: 'year' %}
+  {% assign institution_order = "Dongduk Women's University,University of Pennsylvania" | split: "," %}
 
-    {% for year_group in courses_by_year %}
-      {% assign year_courses = year_group.items | sort: 'term' %}
-      {% assign year_term = year_courses.first.term %}
-      <h2 class="year">{{ year_group.name }}{% if year_term %} {{ year_term }}{% endif %}</h2>
-      <div class="course-list">
-        {% for course in year_courses %}
-          <div class="course-item">
-            <h3 class="course-title">
-              <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
-            </h3>
+  {% for institution in institution_order %}
+    {% assign institution_courses = site.teachings | where: "institution", institution %}
 
-            <div class="course-meta">
-              {% if course.instructor %}
-                <span class="course-instructor">{{ course.instructor }}</span>
-              {% endif %}
+    {% if institution_courses.size > 0 %}
+      <div class="institution-section">
+        <h1 class="institution-name">{{ institution }}</h1>
+        <div class="courses">
+          {% assign courses_by_year = institution_courses | sort: 'year' | reverse | group_by: 'year' %}
+
+          {% for year_group in courses_by_year %}
+            {% assign year_courses = year_group.items | sort: 'term' %}
+            <h2 class="year">{{ year_group.name }}</h2>
+            <div class="course-list">
+              {% for course in year_courses %}
+                <div class="course-item">
+                  <h3 class="course-title">
+                    <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
+                  </h3>
+
+                  <div class="course-meta">
+                    {% if course.term %}
+                      <span class="course-term">{{ course.term }}</span>
+                    {% endif %}
+                    {% if course.instructor %}
+                      <span class="course-instructor">{{ course.instructor }}</span>
+                    {% endif %}
+                  </div>
+
+                  {% if course.description %}
+                    <div class="course-description">
+                      {{ course.description | markdownify }}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
             </div>
-
-            {% if course.description %}
-              <div class="course-description">
-                {{ course.description | markdownify }}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
-    {% endfor %}
-  </div>
+    {% endif %}
+  {% endfor %}
 {% else %}
   <p>No courses available yet.</p>
 {% endif %}

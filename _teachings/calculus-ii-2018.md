@@ -1,10 +1,10 @@
 ---
 layout: course
-title: Basic Statistics
+title: Calculus II
 description: TBU
 instructor: MiYoung Jang
-institution: "Dongduk Women's University"
-year: 2026
+institution: "University of Pennsylvania"
+year: 2018
 term: Fall
 ---
 
