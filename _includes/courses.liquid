@@ -1,47 +1,42 @@
-{% if site.teachings %}
-  {% assign institution_order = "Dongduk Women's University,University of Pennsylvania" | split: "," %}
-
-  {% for institution in institution_order %}
-    {% assign institution_courses = site.teachings | where: "institution", institution %}
-
-    {% if institution_courses.size > 0 %}
-      <div class="institution-section">
-        <h1 class="institution-name">{{ institution }}</h1>
-        <div class="courses">
-          {% assign courses_by_year = institution_courses | sort: 'year' | reverse | group_by: 'year' %}
-
-          {% for year_group in courses_by_year %}
-            {% assign year_courses = year_group.items | sort: 'term' %}
-            <h2 class="year">{{ year_group.name }}</h2>
-            <div class="course-list">
-              {% for course in year_courses %}
-                <div class="course-item">
-                  <h3 class="course-title">
-                    <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
-                  </h3>
-
-                  <div class="course-meta">
-                    {% if course.term %}
-                      <span class="course-term">{{ course.term }}</span>
-                    {% endif %}
-                    {% if course.instructor %}
-                      <span class="course-instructor">{{ course.instructor }}</span>
-                    {% endif %}
-                  </div>
-
-                  {% if course.description %}
-                    <div class="course-description">
-                      {{ course.description | markdownify }}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-{% else %}
-  <p>No courses available yet.</p>
-{% endif %}
+{%- if site.teachings -%}
+{%- assign institution_order = "Dongduk Women's University,University of Pennsylvania" | split: "," -%}
+{%- for institution in institution_order -%}
+{%- assign institution_courses = site.teachings | where: "institution", institution -%}
+{%- if institution_courses.size > 0 -%}
+<div class="institution-section">
+<h1 class="institution-name">{{ institution }}</h1>
+<div class="courses">
+{%- assign courses_by_year = institution_courses | sort: 'year' | reverse | group_by: 'year' -%}
+{%- for year_group in courses_by_year -%}
+{%- assign year_courses = year_group.items | sort: 'term' -%}
+<h2 class="year">{{ year_group.name }}</h2>
+<div class="course-list">
+{%- for course in year_courses -%}
+<div class="course-item">
+<h3 class="course-title">
+<a href="{{ course.url | relative_url }}">{{ course.title }}</a>
+</h3>
+<div class="course-meta">
+{%- if course.term -%}
+<span class="course-term">{{ course.term }}</span>
+{%- endif -%}
+{%- if course.instructor -%}
+<span class="course-instructor">{{ course.instructor }}</span>
+{%- endif -%}
+</div>
+{%- if course.description -%}
+<div class="course-description">
+{{ course.description | markdownify }}
+</div>
+{%- endif -%}
+</div>
+{%- endfor -%}
+</div>
+{%- endfor -%}
+</div>
+</div>
+{%- endif -%}
+{%- endfor -%}
+{%- else -%}
+<p>No courses available yet.</p>
+{%- endif -%}
