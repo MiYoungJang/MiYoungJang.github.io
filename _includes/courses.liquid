@@ -14,6 +14,9 @@
 {%- for course in year_courses -%}
 <div class="course-item">
 <h3 class="course-title">{{ course.title }}</h3>
+{%- if course.term -%}
+<span class="course-term">{{ course.term }}</span>
+{%- endif -%}
 {%- if course.description == "Graduate course" -%}
 <span class="course-level">Graduate course</span>
 {%- endif -%}

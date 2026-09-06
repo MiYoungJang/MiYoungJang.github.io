@@ -21,5 +21,4 @@ profiles:
       <p>Seoul, South Korea</p>
       <p>mjang (at) dongduk.ac.kr</p>
       <p><a href="https://miyoungjang.github.io/" target="_blank" rel="noopener noreferrer">miyoungjang.github.io</a></p>
-      <p><a href="https://github.com/MiYoungJang" target="_blank" rel="noopener noreferrer">github.com/MiYoungJang</a></p>
 ---
