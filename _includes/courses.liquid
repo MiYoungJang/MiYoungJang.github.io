@@ -13,21 +13,9 @@
 <div class="course-list">
 {%- for course in year_courses -%}
 <div class="course-item">
-<h3 class="course-title">
-<a href="{{ course.url | relative_url }}">{{ course.title }}</a>
-</h3>
-<div class="course-meta">
-{%- if course.term -%}
-<span class="course-term">{{ course.term }}</span>
-{%- endif -%}
-{%- if course.instructor -%}
-<span class="course-instructor">{{ course.instructor }}</span>
-{%- endif -%}
-</div>
-{%- if course.description -%}
-<div class="course-description">
-{{ course.description | markdownify }}
-</div>
+<h3 class="course-title">{{ course.title }}</h3>
+{%- if course.description == "Graduate course" -%}
+<span class="course-level">Graduate course</span>
 {%- endif -%}
 </div>
 {%- endfor -%}
