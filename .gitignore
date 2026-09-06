@@ -19,3 +19,8 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# Agent skill folders (local-only, not published to the site)
+.claude/
+.codex/
+.agents/skills/
